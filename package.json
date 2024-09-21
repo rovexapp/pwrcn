@@ -1,0 +1,16 @@
+{
+  "name": "telegram-mini-app",
+  "version": "1.0.0",
+  "description": "Mini Telegram referral app",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "body-parser": "^1.19.0",
+    "fs": "0.0.1-security"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "mee",
+  "license": "ISC"
+}
