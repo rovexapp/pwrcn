@@ -1,34 +1,20 @@
-html<!DOCTYPE html>
-<html lang="ar">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دعوة الأصدقاء</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/styles.css">
+  <title>Referral Page</title>
 </head>
 <body>
-    <h1>دعوة الأصدقاء</h1>
-    <p>مشاركة رابط الدعوة مع الأصدقاء للحصول على 100 نقطة!</p>
-    <button onclick="copyToClipboard()">نسخ الرابط</button>
-    <button onclick="shareLink()">مشاركة عبر تيليجرام</button>
-    
-    <p id="referralLink"></p>
+  <div class="container">
+    <h1>إحالاتك</h1>
+    <p>رابط الإحالة الخاص بك: <span id="referralLink"></span></p>
+    <button onclick="copyReferralLink()">نسخ الرابط</button>
+    <h2>الأشخاص الذين أحلتهم:</h2>
+    <ul id="referralList"></ul>
+  </div>
 
-    <script>
-        const userId = Math.floor(Math.random() * 100000); // نموذج لتوليد ID للمستخدم
-        const referralLink = `https://example.com?ref=${userId}`;
-        document.getElementById('referralLink').innerText = `رابط الدعوة: ${referralLink}`;
-
-        function copyToClipboard() {
-            navigator.clipboard.writeText(referralLink)
-                .then(() => alert('تم نسخ الرابط!'))
-                .catch(err => console.error('فشل النسخ', err));
-        }
-
-        function shareLink() {
-            const message = `استخدم رابط الدعوة هذا للحصول على 100 نقطة: ${referralLink}`;
-            const telegramUrl = `https://t.me/share/url?url=${encodeURIComponent(referralLink)}&text=${encodeURIComponent(message)}`;
-            window.open(telegramUrl, '_blank');
-        }
-    </script>
+  <script src="/script.js"></script>
 </body>
 </html>
